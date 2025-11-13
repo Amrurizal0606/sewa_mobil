@@ -7,7 +7,7 @@ import Building4 from "@/assets/images/icons/building-4.svg";
 import Sls from "@/assets/images/thumbnails/sls-amg.png";
 import Flash from "@/assets/images/icons/flash.svg";
 import Star from "@/assets/images/icons/star.svg";
-import Pista from "@/assets/images/thumbnails/pista-side.png";
+import Pista from "@/assets/images/thumbnails/sls-amg.png";
 import { useRouter } from "next/navigation";
 
 export default function HomePage() {
