@@ -19,10 +19,21 @@ import store2 from "@/assets/images/thumbnails/store-2.png";
 import tick from "@/assets/images/icons/tick-circle.svg";
 import store3 from "@/assets/images/thumbnails/store-3.png";
 import shield from "@/assets/images/icons/shield-tick.svg";
+import car from "@/assets/images/icons/car.svg";
+import dollar from "@/assets/images/icons/dollar-square.svg";
+import securityCard from "@/assets/images/icons/security-card.svg";
+import courthouse from "@/assets/images/icons/courthouse.svg";
+import ticket from "@/assets/images/icons/ticket-discount.svg";
+import card from "@/assets/images/icons/card-tick.svg";
+import receipt from "@/assets/images/icons/receipt-text.svg";
+import CardOnly from "@/assets/images/icons/card.svg";
+import verify from "@/assets/images/icons/verify.svg";
+import bca from "@/assets/images/logos/bca.svg";
+import mandiri from "@/assets/images/logos/mandiri.svg";
 
 export default function BookingPage() {
   const router = useRouter();
-  const [step, setStep] = useState<number>(2);
+  const [step, setStep] = useState<number>(3);
 
   const renderStep = () => {
     if (step === 1) {
@@ -312,7 +323,7 @@ export default function BookingPage() {
                   className="tablink relative w-full rounded-full p-[10px_14px] font-semibold bg-white transition-all duration-300 hover:ring-1 hover:ring-alpina-blue"
                   id="defaultOpen"
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 cursor-pointer">
                     <div className="w-6 h-6 flex shrink-0">
                       <Image src={build} alt="icon" />
                     </div>
@@ -327,84 +338,21 @@ export default function BookingPage() {
                   />
                 </label>
                 <label className="tablink relative w-full rounded-full p-[10px_14px] font-semibold bg-white transition-all duration-300 hover:ring-1 hover:ring-alpina-blue">
-                  <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 flex shrink-0">
-                      <img src="assets/images/icons/car.svg" alt="icon" />
+                  <div className="flex items-center gap-3 cursor-pointer">
+                    <div className="w-6 h-6 flex shrink-0r">
+                      <Image src={car} alt="icon" />
                     </div>
                     <p>Home Delivery</p>
                   </div>
                 </label>
               </div>
               <div className="tabs-contents">
-                <div
-                  id="pickup-tab"
-                  // className="tabcontent flex flex-col gap-4 hidden"
-                >
+                <div id="pickup-tab" className="tabcontent flex flex-col gap-4">
                   <label className="relative group w-full rounded-[20px] p-[10px_14px] bg-white transition-all duration-300 hover:ring-1 hover:ring-alpina-blue has-[:checked]:ring-1 has-[:checked]:ring-alpina-blue">
-                    <div className="flex items-center gap-[14px]">
+                    <div className="flex items-center gap-[14px] cursor-pointer">
                       <div className="w-[90px] h-[90px] rounded-[20px] flex shrink-0 overflow-hidden bg-[#1D68B4]">
                         <Image
                           src={store}
-                          className="w-full h-full object-cover"
-                          alt="icon"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-1 w-full">
-                        <p className="font-bold">Xtrade Centre</p>
-                        <p className="text-sm leading-[21px]">
-                          Perumahan sinar bumi hayang nomor 19938
-                        </p>
-                      </div>
-                      <div className="w-6 h-6 flex shrink-0">
-                        <Image
-                          src={tick}
-                          className="w-6 h-6 hidden group-has-[:checked]:flex"
-                          alt="icon"
-                        />
-                      </div>
-                    </div>
-                    <input
-                      type="radio"
-                      name="store"
-                      id=""
-                      className="absolute -z-10 top-1/2 left-1/2 opacity-0"
-                    />
-                  </label>
-                  <label className="relative group w-full rounded-[20px] p-[10px_14px] bg-white transition-all duration-300 hover:ring-1 hover:ring-alpina-blue has-[:checked]:ring-1 has-[:checked]:ring-alpina-blue">
-                    <div className="flex items-center gap-[14px]">
-                      <div className="w-[90px] h-[90px] rounded-[20px] flex shrink-0 overflow-hidden bg-[#1D68B4]">
-                        <Image
-                          src={store2}
-                          className="w-full h-full object-cover"
-                          alt="icon"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-1 w-full">
-                        <p className="font-bold">Angga Fast!</p>
-                        <p className="text-sm leading-[21px]">
-                          Jalan pecinta mobiles mewah sejak lahir no 96
-                        </p>
-                      </div>
-                      <div className="w-6 h-6 flex shrink-0">
-                        <Image
-                          src={tick}
-                          className="w-6 h-6 hidden group-has-[:checked]:flex"
-                          alt="icon"
-                        />
-                      </div>
-                    </div>
-                    <input
-                      type="radio"
-                      name="store"
-                      id=""
-                      className="absolute -z-10 top-1/2 left-1/2 opacity-0"
-                    />
-                  </label>
-                  <label className="relative group w-full rounded-[20px] p-[10px_14px] bg-white transition-all duration-300 hover:ring-1 hover:ring-alpina-blue has-[:checked]:ring-1 has-[:checked]:ring-alpina-blue">
-                    <div className="flex items-center gap-[14px]">
-                      <div className="w-[90px] h-[90px] rounded-[20px] flex shrink-0 overflow-hidden bg-[#1D68B4]">
-                        <Image
-                          src={store3}
                           className="w-full h-full object-cover"
                           alt="icon"
                         />
@@ -450,6 +398,320 @@ export default function BookingPage() {
               >
                 <span className="font-bold text-white">Continue Booking</span>
                 <Image src={arrow} className="w-6 h-6" alt="icon" />
+              </button>
+            </div>
+          </form>
+        </div>
+      );
+    } else if (step === 3) {
+      return (
+        <div
+          id="main-content"
+          className="relative flex flex-col w-full max-w-[640px] min-h-screen mx-auto bg-white"
+        >
+          <div className="absolute backdrop w-full h-[400px] bg-alpina-blue"></div>
+          <div
+            id="Top-Bar"
+            className="flex items-center justify-between px-4 mt-[60px] z-10"
+          >
+            <Image
+              src={BackBorderWhite}
+              className="flex shrink-0 w-10 cursor-pointer"
+              alt="icon"
+            />
+
+            <div className="w-fit text-center text-white">
+              <p className="text-sm leading-[21px] ">Almost Done</p>
+              <p className="font-bold text-xl lead`ing-[30px]">Payment</p>
+            </div>
+            <div className="dummy-btn w-10"></div>
+          </div>
+
+          <div id="header" className="px-4 z-10 mt-[30px] cursor-pointer">
+            <div className="flex items-center w-full rounded-[20px] border border-[#EFF2F7] p-[10px_14px] gap-[14px] bg-white hover:ring-1 hover:ring-[#362EED] transition-all duration-300">
+              <div className="flex w-[130px] h-[100px] shrink-0 overflow-hidden">
+                <Image
+                  src={huayra}
+                  className="w-full h-full object-contain"
+                  alt="thumbnail"
+                />
+              </div>
+              <div className="flex flex-col gap-[14px] w-full">
+                <div className="flex flex-col gap-1">
+                  <h3 className="font-bold">Huayra White</h3>
+                  <p className="font-semibold text-sm leading-[21px] text-alpina-blue">
+                    Rp 22.000.000
+                  </p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-[2px]">
+                    <Image src={Flash} className="w-5 h-5" alt="icon" />
+                    <p className="font-semibold text-sm leading-[21px]">
+                      450kmh
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-[2px] justify-end">
+                    <p className="font-semibold text-sm leading-[21px]">4/5</p>
+                    <Image src={Star} className="w-5 h-5" alt="icon" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <section id="Booking-Details" className="px-4 mt-5 z-10">
+            <div className="group accordion flex flex-col rounded-[20px] border border-[#EFF2F7] p-5 gap-[18px] bg-white has-[:checked]:!h-[64px] overflow-hidden transition-all duration-300">
+              <label className="flex items-center justify-between cursor-pointer">
+                <p className="font-bold">Booking Details</p>
+                <Image
+                  src={arrowCircle}
+                  className="w-6 h-6 group-has-[:checked]:-rotate-180 transition-all duration-300"
+                  alt="icon"
+                />
+                <input
+                  type="checkbox"
+                  name="dropdown"
+                  id="dropdown"
+                  className="hidden"
+                />
+              </label>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={timer} className="w-6 h-6" alt="icon" />
+                  <p>Duration</p>
+                </div>
+                <p className="font-semibold">10 Days Ahead</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={calendar} className="w-6 h-6" alt="icon" />
+                  <p>Rented At</p>
+                </div>
+                <p className="font-semibold">July 10, 2024</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={security} className="w-6 h-6" alt="icon" />
+                  <p>Full Name</p>
+                </div>
+                <p className="font-semibold">Angga Shayna</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={sms} className="w-6 h-6" alt="icon" />
+                  <p>Email Address</p>
+                </div>
+                <p className="font-semibold">toko@angga.com</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={call} className="w-6 h-6" alt="icon" />
+                  <p>Phone Number</p>
+                </div>
+                <p className="font-semibold">628123123123</p>
+              </div>
+            </div>
+          </section>
+          <section id="Delivery-Details" className="px-4 mt-5 z-10">
+            <div className="group accordion flex flex-col rounded-[20px] border border-[#EFF2F7] p-5 gap-[18px] bg-white has-[:checked]:!h-[64px] overflow-hidden transition-all duration-300">
+              <label className="flex items-center justify-between cursor-pointer">
+                <p className="font-bold">Pickup Store At</p>
+                <Image
+                  src={arrowCircle}
+                  className="w-6 h-6 group-has-[:checked]:-rotate-180 transition-all duration-300"
+                  alt="icon"
+                />
+                <input
+                  type="checkbox"
+                  name="dropdown"
+                  id="dropdown"
+                  className="hidden"
+                />
+              </label>
+              <div className="flex items-center gap-[14px]">
+                <div className="w-[90px] h-[90px] rounded-[20px] flex shrink-0 overflow-hidden bg-[#1D68B4]">
+                  <Image
+                    src={store}
+                    className="w-full h-full object-cover"
+                    alt="icon"
+                  />
+                </div>
+                <div className="flex flex-col gap-1 w-full">
+                  <p className="font-bold line-clamp-1">Xtrade Centre</p>
+                  <p className="text-sm leading-[21px] line-clamp-2">
+                    Perumahan sinar bumi hayang nomor 19938
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="Payment-Details" className="px-4 mt-5 z-10">
+            <div className="group accordion flex flex-col rounded-[20px] border border-[#EFF2F7] p-5 gap-[18px] bg-white has-[:checked]:!h-[64px] overflow-hidden transition-all duration-300">
+              <label className="flex items-center justify-between cursor-pointer">
+                <p className="font-bold">Payment Details</p>
+                <Image
+                  src={arrowCircle}
+                  className="w-6 h-6 group-has-[:checked]:-rotate-180 transition-all duration-300"
+                  alt="icon"
+                />
+                <input
+                  type="checkbox"
+                  name="dropdown"
+                  id="dropdown"
+                  className="hidden"
+                />
+              </label>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={dollar} className="w-6 h-6" alt="icon" />
+                  <p>Price</p>
+                </div>
+                <p className="font-semibold">Rp 22.000.000</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={securityCard} className="w-6 h-6" alt="icon" />
+                  <p>Insurance</p>
+                </div>
+                <p className="font-semibold">Rp 500.000</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={courthouse} className="w-6 h-6" alt="icon" />
+                  <p>Tax 11%</p>
+                </div>
+                <p className="font-semibold">Rp 4.000.000</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={ticket} className="w-6 h-6" alt="icon" />
+                  <p>Discount </p>
+                </div>
+                <p className="font-semibold">Rp 0</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-[6px]">
+                  <Image src={card} className="w-6 h-6" alt="icon" />
+                  <p>Grand Total</p>
+                </div>
+                <p className="font-bold text-[22px] leading-[33px] text-alpina-blue">
+                  Rp 24.500.000
+                </p>
+              </div>
+            </div>
+          </section>
+          <section id="Sent-Payment" className="px-4 mt-5 z-10">
+            <div className="group accordion flex flex-col rounded-[20px] border border-[#EFF2F7] p-5 gap-[18px] bg-white has-[:checked]:!h-[64px] overflow-hidden transition-all duration-300">
+              <label className="flex items-center justify-between">
+                <p className="font-bold">Send Payment to</p>
+                <Image
+                  src={arrowCircle}
+                  className="w-6 h-6 group-has-[:checked]:-rotate-180 transition-all duration-300"
+                  alt="icon"
+                />
+                <input
+                  type="checkbox"
+                  name="dropdown"
+                  id="dropdown"
+                  className="hidden"
+                />
+              </label>
+              <div className="flex items-center gap-3">
+                <div className="w-[71px] h-[50px] flex shrink-0 overflow-hidden">
+                  <Image
+                    src={bca}
+                    className="w-full h-full object-contain"
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-col gap-[2px]">
+                  <div className="flex items-center gap-1">
+                    <p className="font-semibold">Alpina Indonesia</p>
+                    <Image
+                      src={verify}
+                      className="w-[18px] h-[18px]"
+                      alt="icon"
+                    />
+                  </div>
+                  <p>8008129839</p>
+                </div>
+              </div>
+              <hr className="border-[#EFF2F7]" />
+              <div className="flex items-center gap-3">
+                <div className="w-[71px] h-[50px] flex shrink-0 overflow-hidden">
+                  <Image
+                    src={mandiri}
+                    className="w-full h-full object-contain"
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-col gap-[2px]">
+                  <div className="flex items-center gap-1">
+                    <p className="font-semibold">Alpina Indonesia</p>
+                    <Image
+                      src={verify}
+                      className="w-[18px] h-[18px]"
+                      alt="icon"
+                    />
+                  </div>
+                  <p>12379834983281</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <form action="booking-finished.html" className="flex flex-col gap-5">
+            <div id="Proof-Payment" className="px-4 mt-5 z-10">
+              <div className="group accordion flex flex-col rounded-[20px] border border-[#EFF2F7] p-5 gap-[18px] bg-white has-[:checked]:!h-[64px] overflow-hidden transition-all duration-300">
+                <label className="flex items-center justify-between">
+                  <p className="font-bold">Proof of Payment</p>
+                  <Image
+                    src={arrowCircle}
+                    className="w-6 h-6 group-has-[:checked]:-rotate-180 transition-all duration-300"
+                    alt="icon"
+                  />
+                  <input
+                    type="checkbox"
+                    name="dropdown"
+                    id="dropdown"
+                    className="hidden"
+                  />
+                </label>
+                <label className="relative flex items-center h-[62px] rounded-full border border-[#EFF2F7] p-[10px_24px] gap-[10px] bg-[#F9FAFB] focus-within:ring-1 focus-within:ring-[#362EED] transition-all duration-300">
+                  <div className="w-6 h-6 flex shrink-0">
+                    <Image src={receipt} alt="icon" />
+                  </div>
+                  <div className="appearance-none outline-none w-full flex flex-col-reverse">
+                    <p id="Upload-btn" className="font-semibold hidden"></p>
+                    <input
+                      type="file"
+                      name="proof"
+                      id="Proof"
+                      className="peer absolute -z-10 opacity-0 w-[10px]"
+                      required
+                    />
+                    <p className="text-alpina-light-grey peer-valid:text-xs peer-valid:leading-[18px]">
+                      Add an attachment
+                    </p>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <div className="flex flex-col gap-[30px] px-4 mb-[30px]">
+              <div className="flex items-center gap-[10px]">
+                <Image
+                  src={shield}
+                  className="w-8 h-8 flex shrink-0"
+                  alt="icon"
+                />
+                <p className="font-semibold leading-[26px]">
+                  Kami melindungi privasi anda dengan baik bantuan Angga Pro.
+                </p>
+              </div>
+              <button
+                type="submit"
+                className="flex items-center justify-between w-full rounded-full p-[14px_24px] bg-alpina-blue"
+              >
+                <span className="font-bold text-white">Confirm My Payment</span>
+                <Image src={CardOnly} className="w-6 h-6" alt="icon" />
               </button>
             </div>
           </form>
