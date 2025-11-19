@@ -30,10 +30,12 @@ import CardOnly from "@/assets/images/icons/card.svg";
 import verify from "@/assets/images/icons/verify.svg";
 import bca from "@/assets/images/logos/bca.svg";
 import mandiri from "@/assets/images/logos/mandiri.svg";
+import logo from "@/assets/images/logos/logo.svg";
+import note from "@/assets/images/icons/note-favorite-black.svg";
 
 export default function BookingPage() {
   const router = useRouter();
-  const [step, setStep] = useState<number>(3);
+  const [step, setStep] = useState<number>(4);
 
   const renderStep = () => {
     if (step === 1) {
@@ -715,6 +717,64 @@ export default function BookingPage() {
               </button>
             </div>
           </form>
+        </div>
+      );
+    } else {
+      return (
+        <div
+          id="main-content"
+          className="relative flex flex-col w-full max-w-[640px] min-h-screen mx-auto bg-white"
+        >
+          <div className="flex flex-col items-center h-fit pt-[60px] pb-[30px] m-auto">
+            <Image src={logo} alt="logo" />
+            <h1 className="text-center mt-[30px] font-bold text-2xl leading-9">
+              Booking is Finished,
+              <br />
+              Congratulations!
+            </h1>
+            <div className="w-full aspect-[393/300] overflow-hidden mt-[30px] pl-4">
+              <Image
+                src={huayra}
+                className="w-full h-full object-cover object-left"
+                alt="thumbnail"
+              />
+            </div>
+            <div className="flex flex-col w-[340px] gap-5 mt-[30px]">
+              <div className="flex flex-col gap-3">
+                <p className="font-semibold text-sm leading-[22px]">
+                  Gunakan booking id transaction berikut untuk periksa status
+                  pemesanan mobilmu
+                </p>
+                <div className="group flex items-center h-[62px] rounded-full border border-[#EFF2F7] p-[10px_24px] gap-[10px] bg-[#F9FAFB] focus-within:ring-1 focus-within:ring-[#362EED] transition-all duration-300">
+                  <Image
+                    src={note}
+                    className="w-6 h-6 flex shrink-0"
+                    alt="icon"
+                  />
+                  <div className="w-full flex flex-col-reverse">
+                    <p className="font-semibold">ALPWBWA2024</p>
+                    <p className="text-xs leading-[18px] text-alpina-light-grey">
+                      Booking ID
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="index.html"
+                  className="w-full rounded-full p-[14px_24px] bg-alpina-blue text-center font-bold text-white"
+                >
+                  Explore Again
+                </a>
+                <a
+                  href="booking-details.html"
+                  className="w-full rounded-full p-[14px_24px] bg-alpina-black text-center font-bold text-white"
+                >
+                  Check My Booking
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       );
     }
